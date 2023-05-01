@@ -7,17 +7,19 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class SlackTempController(
-    private val slack: Slack
+    private val slack: Slack,
+    private val atchaSlackProperties: AtchaSlackProperties
 ) {
 
     @PostMapping("/send")
     fun sendMessage(
         @RequestParam message: String
     ) {
-        val slackBot = slack.methodsAsync("xoxb-4969505888997-5185359962918-S09VH18SRsbwXstkOmTPmPGb")
+        val slackBot = slack.methodsAsync(atchaSlackProperties.token)
 
         slackBot.chatPostMessage{
-            it.channel("C04VA42SX08").text(message)
+            it.channel(atchaSlackProperties.channel)
+                .text(message)
         }
     }
 

@@ -1,10 +1,13 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
+	val kotlinVersion = "1.6.21"
+
 	id("org.springframework.boot") version "2.7.11"
 	id("io.spring.dependency-management") version "1.0.15.RELEASE"
-	kotlin("jvm") version "1.6.21"
-	kotlin("plugin.spring") version "1.6.21"
+	kotlin("jvm") version kotlinVersion
+	kotlin("plugin.spring") version kotlinVersion
+	kotlin("kapt") version kotlinVersion
 }
 
 group = "com.coludclub"
@@ -16,19 +19,22 @@ repositories {
 }
 
 object DependencyVersions {
-//	const val SLACK_WEBHOOK_VERSION = "1.4.0"
 	const val SLACK_CLIENT_VERSION = "1.8.1"
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-web")
+	/** Spring Boot starter (kotlin, web, validation) */
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
+	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation ("org.springframework.boot:spring-boot-starter-validation")
+
+	kapt("org.springframework.boot:spring-boot-configuration-processor")
+
+	/** Test */
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 
-
 	/** slack */
-//	implementation("net.gpedro.integrations.slack:slack-webhook:${DependencyVersions.SLACK_WEBHOOK_VERSION}")
 	implementation("com.slack.api:slack-api-client:${DependencyVersions.SLACK_CLIENT_VERSION}")
 	implementation("com.slack.api:slack-api-model-kotlin-extension:${DependencyVersions.SLACK_CLIENT_VERSION}")
 	implementation("com.slack.api:slack-api-client-kotlin-extension:${DependencyVersions.SLACK_CLIENT_VERSION}")
