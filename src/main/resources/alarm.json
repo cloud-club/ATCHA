@@ -1,0 +1,12 @@
+[
+  {
+    "channelName": "terraform-test",
+    "message": "일해라",
+    "cronTime": "0 30 12 ? * SUN,SAT *"
+  },
+  {
+    "channelName": "good",
+    "message": "일해라",
+    "cronTime": "0/1 * * * * ?"
+  }
+]

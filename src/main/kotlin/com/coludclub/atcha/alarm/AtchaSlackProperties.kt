@@ -1,4 +1,4 @@
-package com.coludclub.atcha
+package com.coludclub.atcha.alarm
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.context.annotation.Configuration
@@ -11,7 +11,4 @@ import javax.validation.constraints.NotBlank
 class AtchaSlackProperties {
     @field:NotBlank
     var token: String = ""
-
-    @field:NotBlank
-    var channel: String = ""
 }
