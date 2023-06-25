@@ -2,7 +2,7 @@
   {
     "channelName": "terraform-test",
     "message": "일해라",
-    "cronTime": "0 30 12 ? * SUN,SAT *"
+    "cronTime": "0 50 14 ? * SUN,SAT *"
   },
   {
     "channelName": "good",
