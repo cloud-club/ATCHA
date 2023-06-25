@@ -2,6 +2,6 @@
   {
     "channelName": "terraform-test",
     "message": "<!channel> ATCHA Study 알림 : 스터디 5분 전 이에요 :smile:",
-    "cronTime": "0 17 17 ? * SUN,SAT *"
+    "cronTime": "0 21 17 ? * SUN,SAT *"
   }
 ]
