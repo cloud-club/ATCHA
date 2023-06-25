@@ -1,12 +1,7 @@
 [
   {
     "channelName": "terraform-test",
-    "message": "일해라",
-    "cronTime": "0 52 14 ? * SUN,SAT *"
-  },
-  {
-    "channelName": "good",
-    "message": "일해라",
-    "cronTime": "0/1 * * * * ?"
+    "message": "<!channel> ATCHA Study 알림 : 스터디 5분 전 이에요 :smile:",
+    "cronTime": "0 17 17 ? * SUN,SAT *"
   }
 ]
